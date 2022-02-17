@@ -1,0 +1,119 @@
+[
+    {
+        "author_id": 1,
+        "cover": null,
+        "id": 1,
+        "isbn": null,
+        "language_id": 1,
+        "summary": "From the text of Johnson, Stevens, and Reed; with glossarial notes, his life, and a critique on the genius of his writings.",
+        "title": "The Dramatic Works of William Shakspeare"
+    },
+    {
+        "author_id": 2,
+        "cover": null,
+        "id": 2,
+        "isbn": "0000000000",
+        "language_id": 1,
+        "summary": "The Master of Ballantrae: A Winter's Tale is one of Stevenson's darker, more political novels. Two brothers are brought into conflict by the Jacobite rising of 1745, which tears their family apart.",
+        "title": "The master of Ballantrae"
+    },
+    {
+        "author_id": 3,
+        "cover": null,
+        "id": 3,
+        "isbn": "0000000001",
+        "language_id": 3,
+        "summary": "Vathek is one of the earliest and most influential Gothic novels. Its hero is the Caliph Vathek who renounces Islam in a hedonistic quest for supernatural powers, which leads to his downfall. Beckford's genius was in marrying Orientalism with the Gothic, both sources of fascination and delight to reading audiences of the time.",
+        "title": "Vathek."
+    },
+    {
+        "author_id": 4,
+        "cover": "catalog/books/C._Iulii_Caesaris_comentarii_De_bello_Gallico_et_civili.jpg",
+        "id": 4,
+        "isbn": "0000000002",
+        "language_id": 14,
+        "summary": "This edition doesn't have a description yet. Can you add one?",
+        "title": "C. Iulii Caesaris comentarii De bello Gallico et civili"
+    },
+    {
+        "author_id": 5,
+        "cover": null,
+        "id": 5,
+        "isbn": "0000000003",
+        "language_id": 1,
+        "summary": "This edition doesn't have a description yet. Can you add one?",
+        "title": "The stones of Venice."
+    },
+    {
+        "author_id": 5,
+        "cover": null,
+        "id": 6,
+        "isbn": "0000000004",
+        "language_id": 1,
+        "summary": "This edition doesn't have a description yet. Can you add one?",
+        "title": "Sesame and lilies."
+    },
+    {
+        "author_id": 5,
+        "cover": "catalog/books/Modern_painters.jpg",
+        "id": 7,
+        "isbn": "0000000005",
+        "language_id": 1,
+        "summary": "This edition doesn't have a description yet. Can you add one?",
+        "title": "Modern painters."
+    },
+    {
+        "author_id": 6,
+        "cover": "catalog/books/Nutrition_and_national_policy.jpg",
+        "id": 8,
+        "isbn": "0000000006",
+        "language_id": 1,
+        "summary": "This edition doesn't have a description yet. Can you add one?",
+        "title": "Nutrition and national policy"
+    },
+    {
+        "author_id": 7,
+        "cover": "catalog/books/Model_For_Love.jpg",
+        "id": 9,
+        "isbn": "9780373029686",
+        "language_id": 1,
+        "summary": "No personal involvement she'd told him\r\n\r\nWhen Adam St. John agreed to let her sculpt his head, Felicia firmly laid out the rules. He would pose, she would work, and that was it.\r\n\r\nFor Adam, a handsome and successful entrepreneur, was the kind of man who felt duty-bound to make a play for every woman who took his fancy. Felicia's bitter past made her acutely aware of the dangers such men posed to women like herself.\r\n\r\nBut she couldn't resist the classic lines of his face, and her fingers itched to mold them. Now if only she could suppress another overwhelming urge... .",
+        "title": "Model For Love"
+    },
+    {
+        "author_id": 8,
+        "cover": null,
+        "id": 10,
+        "isbn": "9781599982632",
+        "language_id": 1,
+        "summary": "One fateful night, Toni Langston seduces her best friend, the guy she's been in love with forever. Two problems-he doesn't remember a thing that happened and now she's pregnant. Toni Langston has been in love with Simon, her best friend, for years. The night Simon breaks up with his long time girlfriend, he and Toni make love. Toni is devastated and humiliated when, in the heat of the moment, he calls her by his girlfriend's name. The next morning, Simon remembers nothing of the previous night and Toni is only too relieved not to remind him. Two months later, she discovers she's pregnant. She wants Simon to love her, apart from any obligation he might feel because of the baby. So she embarks on a quest to seduce her best friend, to make him see her as more than a little sister, to make him love her as much as she loves him. It works. Maybe too well. Now when things are perfect, she faces telling him of the secret she's kept.",
+        "title": "Seducing Simon"
+    },
+    {
+        "author_id": 27,
+        "cover": "catalog/books/Foucaults_pendulum.jpg",
+        "id": 11,
+        "isbn": "0151327653",
+        "language_id": 1,
+        "summary": "English:\r\n\r\nAn Enthralling Mystery, a breathtaking rollercoaster ride through a world of ideas and aberrations, an adventure into the modern mind.\r\n\r\nOne Colonel Ardenti, who has unnaturally black, brilliantined hair, an Adolphe Menjou mustache, wears maroon socks, and once served in the Foreign Legion, starts it all. He tells three Milan editors that he has discovered a coded message about a Templar Plan, centuries old and involving Stonehenge, to tap a mystic source of power greater than atomic energy.\r\nThe editors (who have spent altogether too much time rewriting crackpot manuscripts on the occult by self-subsidizing poetasters and dilettantes) decide to have a little fun. They'll make a Plan of their own. But how?\r\nRandomly they throw in manuscript pages on hermetic thought. The Masters of the World, who live beneath the earth. The Comte de Saint-Germain, who lives forever. The secrets of the solar system contained in the measurements of the Great Pyramid. The Satanic initiation rites of the Knights of the Temple, Assassins, Rosicrucians, Brazilian voodoo. They feed all of this into their computer, which is named Abulafia (Abu for short), after the medieval Jewish cabalist.\r\nA terrific joke, they think - until people begin to disappear mysteriously, one by one, starting with Colonel Ardenti.\r\nA superb entertainment by the celebrated author of The Name of the Rose.",
+        "title": "Foucault's pendulum"
+    },
+    {
+        "author_id": 28,
+        "cover": "catalog/books/Charlie_and_the_Chocolate_Factory.jpg",
+        "id": 12,
+        "isbn": "9780553152487",
+        "language_id": 1,
+        "summary": "FIVE CHILDREN--AND ONLY FIVE--WERE GOING TO BE ALLOWED INTO MR. WILLY WONKA'S CHOCOLATE FACTORY...THE FACTORY WHERE THE WORLD'S MOST WONDERFUL CANDY WAS MADE.\r\n\r\nAugustus Gloop--A fat pig of a boy who would eat anything he could get his hands and teeth on.\r\n\r\nVeruca Salt--A spoiled little rich girl who screamed until she was bought her heart's latest delight.\r\n\r\nViolet Beauregarde--The world's champion gum chewer who was destined for a sticky end.\r\n\r\nMike Teavee--A smart aleck who was addicted to television.\r\n\r\nAND...\r\n\r\nCharlie Bucket--Our Hero, who was honest, obedient, loyal, trustworthy, brave, good, kind, and starving.\r\n(back cover)",
+        "title": "Charlie and the Chocolate Factory"
+    },
+    {
+        "author_id": 29,
+        "cover": "catalog/books/Ramona_and_Her_Father.jpg",
+        "id": 13,
+        "isbn": "9780380709168",
+        "language_id": 1,
+        "summary": "Ramona just wants everyone to be happy. If only her father would smile and joke again, her mother would look less worried, her sister would be cheerful, and Picky-picky would eat his cat food. But Ramona's father has lost his job, and nobody in the Quimby household is in a very good mood.\r\n\r\nRamona tries to cheer up the family as only Ramona can--by rehearsing for life as rich and famous star of television commercials, for instance--but her best efforts only make things worse. Her sister, Beezus, calls her a pest, her parents lose patience with her, and her teacher claims she's forgotten her manners. But when her father admits he wouldn't trade her for a million dollars, Ramona knows everything is going to work out fine in the end.\r\n(back cover)",
+        "title": "Ramona and Her Father"
+    }
+]

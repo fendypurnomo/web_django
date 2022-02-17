@@ -1,0 +1,18 @@
+{% extends "apps/base.html" %}
+
+{% block title %}Authors{% endblock %}
+
+{% block navbar %}
+  {% include "apps/catalog/navbar.html" %}
+{% endblock %}
+
+{% block content %}
+  <h1>Author List</h1>
+  {% if author_list %}
+    {% for author in author_list %}
+      <p><a class="text-decoration-none" href="{{ author.get_absolute_url }}">{{ author }}</a> {% if author.date_of_birth %}({{author.date_of_birth}}{% if author.date_of_death %} - {{author.date_of_death}}{% endif %}){% endif %}</p>
+    {% endfor %}
+  {% else %}
+    <p>There are no authors available.</p>
+  {% endif %}
+{% endblock %}

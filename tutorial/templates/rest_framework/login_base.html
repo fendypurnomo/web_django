@@ -1,0 +1,53 @@
+{% extends "rest_framework/base.html" %}
+
+{% load rest_framework %}
+
+{% block body %}
+  <body class="container">
+    <div class="container-fluid pt-5">
+			<div class="well mx-auto" style="width: 320px;">
+				{% block branding %}
+					<div class="text-center">
+						<h3 class="mb-4">Django REST framework</h3>
+					</div>
+				{% endblock %}
+
+				{% if form.non_field_errors %}
+					{% for error in form.non_field_errors %}
+						<div class="well well-small text-error text-danger border border-danger rounded p-2 mb-3">{{ error }}</div>
+					{% endfor %}
+				{% endif %}
+
+				<form action="{% url 'rest_framework:login' %}" role="form" method="post">
+					{% csrf_token %}
+					<input type="hidden" name="next" value="{{ next }}" />
+					<div id="div_id_username" class="clearfix control-group {% if form.username.errors %}error{% endif %}">
+						<div class="form-group mb-3">
+							<label for="id_username" class="form-label">{{ form.username.label }}</label>
+							<input type="text" name="username" maxlength="100" autocapitalize="off" autocorrect="off" placeholder="Username" class="form-control textinput textInput w-100" id="id_username" required autofocus {% if form.username.value %}value="{{ form.username.value }}"{% endif %}>
+							{% if form.username.errors %}
+								<div class="text-danger">
+									{{ form.username.errors|striptags }}
+								</div>>
+							{% endif %}
+						</div>
+					</div>
+
+					<div id="div_id_password" class="clearfix control-group {% if form.password.errors %}error{% endif %}">
+						<div class="form-group mb-3">
+							<label for="id_password" class="form-label">{{ form.password.label }}</label>
+							<input type="password" name="password" maxlength="100" autocapitalize="off" autocorrect="off" placeholder="Password" class="form-control textinput textInput w-100" id="id_password" required>
+							{% if form.password.errors %}
+								<div class="text-danger">
+									{{ form.password.errors|striptags }}
+								</div>
+							{% endif %}
+						</div>
+					</div>
+
+					<input type="submit" name="submit" value="Sign in" class="btn btn-outline-primary form-control w-100" id="submit-id-submit">
+				</form>
+			</div><!-- /.well -->
+    </div><!-- /.container-fluid -->
+  </body>
+{% endblock %}

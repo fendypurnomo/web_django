@@ -1,0 +1,29 @@
+{% extends "app/base.html" %}
+
+{% block title %}Polls detail{% endblock %}
+
+{% block content %}
+  <div class="row vh-100">
+    <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2 my-auto">
+      <div class="card">
+        <form action="{% url 'polls:vote' question.id %}" method="post" class="m-0">
+          <div class="card-body">
+            {% csrf_token %}
+            <h2>{{ question.question_text }}</h2>
+            {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+            {% for choice in question.choice_set.all %}
+            <div class="custom-control custom-radio">
+              <input class="custom-control-input" type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}"/>
+              <label class="custom-control-label" for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label>
+            </div>
+            {% endfor %}
+          </div>
+          <hr class="m-0">
+          <div class="card-body">
+            <input class="btn btn-sm btn-outline-primary" type="submit" value="Vote">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}

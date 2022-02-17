@@ -1,0 +1,93 @@
+{% extends "admin/base_site.html" %}
+
+{% load i18n static %}
+
+{% block extrastyle %}
+	{{ block.super }}
+		<link rel="stylesheet" type="text/css" href="{% static "admin/css/login.css" %}">
+	{{ form.media }}
+{% endblock %}
+
+{% block title %}
+	Sign in | Fendy admin site
+{% endblock %}
+
+{% block bodyclass %}
+	{{ block.super }}
+	login
+{% endblock %}
+
+{% block usertools %}{% endblock %}
+
+{% block nav-global %}{% endblock %}
+
+{% block nav-sidebar %}{% endblock %}
+
+{% block content_title %}{% endblock %}
+
+{% block breadcrumbs %}{% endblock %}
+
+{% block content %}
+	{% if form.errors and not form.non_field_errors %}
+		<!-- Error message -->
+		<p class="errornote">
+			{% if form.errors.items|length == 1 %}
+				{% translate "Please correct the error below." %}
+			{% else %}
+				{% translate "Please correct the errors below." %}
+			{% endif %}
+		</p>
+		<!-- End error message -->
+	{% endif %}
+
+	{% if form.non_field_errors %}
+		{% for error in form.non_field_errors %}
+			<!-- Error message -->
+			<p class="errornote">
+				{{ error }}
+			</p>
+			<!-- End error message -->
+		{% endfor %}
+	{% endif %}
+
+	<!-- Content main -->
+	<div id="content-main">
+		{% if user.is_authenticated %}
+			<!-- Error message -->
+			<p class="errornote">
+				{% blocktranslate trimmed %}
+				You are authenticated as {{ username }}, but are not authorized to
+				access this page. Would you like to login to a different account?
+				{% endblocktranslate %}
+			</p>
+			<!-- End error message -->
+		{% endif %}
+
+		<!-- Form log in -->
+		<form action="{{ app_path }}" method="post" id="login-form">
+			{% csrf_token %}
+			<div class="form-row mb-3 p-0">
+				{{ form.username.label_tag }}
+				{{ form.username }}
+				{{ form.username.errors }}
+			</div>
+			<div class="form-row mb-4 p-0">
+				{{ form.password.label_tag }}
+				{{ form.password }}
+				{{ form.password.errors }}
+				<input type="hidden" name="next" value="{{ next }}">
+			</div>
+			{% url 'password_reset' as password_reset_url %}
+			{% if password_reset_url %}
+				<div class="password-reset-link mb-4">
+					<a href="{{ password_reset_url }}">{% translate 'Forgotten your password or username?' %}</a>
+				</div>
+			{% endif %}
+			<div class="submit-row p-0">
+				<input type="submit" value="{% translate 'Sign in' %}" class="d-block rounded-pill w-100">
+			</div>
+		</form>
+		<!-- End form log in -->
+	</div>
+	<!-- End content main -->
+{% endblock %}

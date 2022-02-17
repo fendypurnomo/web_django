@@ -1,0 +1,47 @@
+{% block sidebar %}
+  <nav class="navbar navbar-expand-lg bg-white border-bottom fixed-top top-0">
+    <div class="container">
+      <a class="navbar-brand text-dark" href="{% url 'catalog:index' %}">Catalog</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'catalog:index' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'catalog:books' %}">Books</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'catalog:authors' %}">Authors</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav">
+          {% if user.is_authenticated %}
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ user.get_username }}</a>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item" href="{% url 'catalog:my-borrowed-books' %}">My borrowed books</a></li>
+                {% if user.is_staff %}
+                  {% if perms.catalog.can_mark_returned %}
+                    <li><a class="dropdown-item" href="{% url 'catalog:all-borrowed-books' %}">All borrowed books</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="{% url 'catalog:author-create' %}">Create author</a></li>
+                    <li><a class="dropdown-item" href="{% url 'catalog:book-create' %}">Create book</a></li>
+                  {% endif %}
+                {% endif %}
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="{% url 'logout' %}?next={{request.path}}">Sign out</a></li>
+              </ul>
+            </li>
+          {% else %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'signin' %}?next={{request.path}}">Sign in</a>
+            </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+{% endblock %}

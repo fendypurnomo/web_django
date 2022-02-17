@@ -1,0 +1,51 @@
+{% extends "apps/base.html" %}
+
+{% block title %}Book | Catalog{% endblock %}
+
+{% block subtitle %}: {{ book.title }}{% endblock %}
+
+{% block navbar %}
+  {% include "apps/catalog/navbar.html" %}
+{% endblock %}
+
+{% block content %}
+  <div class="d-flex flex-column flex-md-row">
+    <div class="flex-shrink-0">
+      {% if book.cover %}
+        <img class="img-book img-thumbnail rounded mx-auto" src="{{ MEDIA_URL }}{{ book.cover }}" alt="Book-cover" width="200">
+      {% else %}
+        <svg class="bd-placeholder-img" width="200" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#e5e5e5"></rect><text x="50%" y="50%" fill="#999" dy=".3em">No cover</text></svg>
+      {% endif %}
+    </div>
+    <div class="flex-grow-1 mt-3 mt-md-0 ms-md-3">
+      <div class="mb-3">
+        <h1>{{ book.title }}</h1>
+        <p class="mb-1"><strong>Author: </strong>
+          {% if book.author.all %}
+            {% for author in book.author.all %}
+              <a class="text-decoration-none" href="{{ author.get_absolute_url }}">{{ author }}</a>
+            {% endfor %}
+          {% else %}
+            -
+          {% endif %}
+        </p>
+        <p class="mb-1"><strong>Summary: </strong>{{ book.summary }}</p>
+        <p class="mb-1"><strong>Language: </strong>{{ book.language }}</p>
+        <p class="mb-1"><strong>Genre: </strong>{{ book.genre.all|join:", " }}</p>
+        <p class="mb-1"><strong>ISBN 10: </strong>{% if book.isbn10 %}{{ book.isbn10 }}{% else %}-{% endif %}</p>
+        <p class="mb-1"><strong>ISBN 13: </strong>{% if book.isbn13 %}{{ book.isbn13 }}{% else %}-{% endif %}</p>
+      </div>
+      <div>
+        <h2>Copies</h2>
+        {% for copy in book.bookinstance_set.all %}
+          <p class="{% if copy.status == 'a' %}text-success{% elif copy.status == 'd' %}text-danger{% else %}text-warning{% endif %}">{{ copy.get_status_display }}</p>
+          {% if copy.status != 'a' %}
+            <p><strong>Due to be returned: </strong>{{ copy.due_back }}</p>
+          {% endif %}
+          <p><strong>Imprint: </strong>{{ copy.imprint }}</p>
+          <p class="text-muted"><strong>Id: </strong>{{ copy.id }}</p>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

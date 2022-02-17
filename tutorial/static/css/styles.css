@@ -1,0 +1,21 @@
+.navbar {
+  height: 60px
+}
+.main {
+  margin-top: 60px
+}
+p:last-child {
+  margin-bottom: 0 !important;
+}
+.card:last-child {
+  margin-bottom: 0 !important
+}
+.img-book-list {
+  object-fit: cover;
+  object-position: center;
+  height: 150px;
+  width: 150px;
+}
+.bd-placeholder-img {
+  text-anchor: middle;
+}

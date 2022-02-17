@@ -1,0 +1,17 @@
+{% extends "apps/base.html" %}
+
+{% block title %}Create author{% endblock %}
+
+{% block navbar %}
+  {% include "apps/catalog/navbar.html" %}
+{% endblock %}
+
+{% block content %}
+  <div class="mt-3">
+    <form action="" method="post">
+      {% csrf_token %}
+      <table>{{ form.as_table }}</table>
+      <input class="btn btn-sm btn-outline-primary" type="submit" value="Submit"/>
+    </form>
+  </div>
+{% endblock %}

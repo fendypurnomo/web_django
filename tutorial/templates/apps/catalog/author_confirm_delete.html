@@ -1,0 +1,16 @@
+{% extends "apps/base.html" %}
+
+{% block title %}Confirm delete author?{% endblock %}
+
+{% block navbar %}
+  {% include "apps/catalog/navbar.html" %}
+{% endblock %}
+
+{% block content %}
+  <h1>Delete Author</h1>
+  <p>Are you sure you want to delete the author: {{ author }}?</p>
+  <form action="" method="POST">
+    {% csrf_token %}
+    <input class="btn btn-sm btn-outline-primary" type="submit" value="Yes, delete."/>
+  </form>
+{% endblock %}

@@ -1,0 +1,52 @@
+#header {
+	z-index: 30
+}
+#content-main .module:last-child {
+	margin-bottom: 0px
+}
+.result-table + .paginator {
+	margin-top: -0.5rem
+}
+fieldset .form-row:last-child {
+	border-bottom: 0px !important
+}
+.aligned label {
+	padding: 0px !important;
+	width: auto !important;
+}
+tr.add-row td {
+	border-bottom-right-radius: .25rem !important;
+	border-bottom-left-radius: .25rem !important;
+	background: white !important;
+	border-bottom: 0 !important
+}
+.submit-row input:last-child,
+.submit-row a:last-child {
+	margin-bottom: 0px !important;
+}
+.table-tabular-scroll {
+	width: 100%;
+	overflow-x: auto;
+}
+#nav-sidebar .module {
+	padding: 0 !important;
+}
+
+@media(min-width: 768px) {
+	.vTextField, .vUUIDField, input[type="password"] {
+		width: 25em;
+	}
+}
+
+@media(max-width: 768px) {
+	.main > #nav-sidebar + .content, .main.shifted > #nav-sidebar + .content {
+		max-width: 100%;
+	}
+	#nav-sidebar, #toggle-nav-sidebar {
+    display: none;
+	}
+	.vTextField, .vUUIDField, input[type="password"] {
+		flex: 1 1 auto;
+		width: 100%;
+	}
+}

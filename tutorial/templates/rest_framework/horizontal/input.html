@@ -1,0 +1,19 @@
+<div class="form-group mb-3 {% if field.errors %}has-error{% endif %}">
+  {% if field.label %}
+    <label class="form-label {% if style.hide_label %}sr-only{% endif %}">
+      {{ field.label }}
+    </label>
+  {% endif %}
+
+	<input name="{{ field.name }}" {% if style.input_type != "file" %}class="form-control w-100"{% endif %} type="{{ style.input_type }}" {% if style.placeholder %}placeholder="{{ style.placeholder }}"{% endif %} {% if field.value is not None %}value="{{ field.value }}"{% endif %} {% if style.autofocus and style.input_type != "hidden" %}autofocus{% endif %}>
+
+	{% if field.errors %}
+		{% for error in field.errors %}
+			<small class="text-danger">{{ error }}</small>
+		{% endfor %}
+	{% endif %}
+
+	{% if field.help_text %}
+		<small class="form-text">{{ field.help_text|safe }}</small>
+	{% endif %}
+</div>

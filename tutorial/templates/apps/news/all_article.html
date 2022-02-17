@@ -1,0 +1,40 @@
+{% extends "apps/base.html" %}
+
+{% block title %}
+	{{ title }}{% if year %} - {{ year }}{% endif %}{% if month %}/{{ month }}{% endif %}
+{% endblock %}
+
+{% block content %}
+	<div class="row">
+		<div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+			<h1>{{ heading }}{% if year %} - {{ year }}{% endif %}{% if month %}/{{ month }}{% endif %}</h1>
+
+			{% if article_list %}
+				{% for article in article_list %}
+					<div class="row my-2">
+						<div class="col">
+							<div class="card">
+								<div class="card-body">
+									<h5 class="card-title">{{ article.headline }}</h5>
+									<p class="small">By: {{ article.reporter.full_name }}, Published: {{ article.pub_date|date:"F j, Y" }}</p>
+									<p class="card-text">{{ article.content|truncatechars:100 }}</p>
+									<a class="card-link text-decoration-none" href="{% url 'news:article_detail' article.pub_date|date:'Y' article.pub_date|date:'m' article.id %}">Read more..</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+			{% else %}
+				<div class="row my-2">
+					<div class="col">
+						<div class="card">
+							<div class="card-body">
+								<p class="card-title">No news are available.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			{% endif %}
+		</div>
+	</div>
+{% endblock %}

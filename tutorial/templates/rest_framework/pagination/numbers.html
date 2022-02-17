@@ -1,0 +1,58 @@
+<ul class="pagination pagination-sm">
+	<!-- Previous button -->
+	{% if previous_url %}
+		<li class="page-item">
+			<a class="page-link" href="{{ previous_url }}" aria-label="Previous">
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 19">
+					<path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+				</svg>
+			</a>
+		</li>
+	{% else %}
+		<li class="page-item disabled">
+			<a class="page-link" href="#" aria-label="Previous">
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 19">
+					<path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+				</svg>
+			</a>
+		</li>
+	{% endif %}
+
+	<!-- Link page -->
+	{% for page_link in page_links %}
+		{% if page_link.is_break %}
+			<li class="page-item disabled">
+				<a class="page-link" href="#"><span aria-hidden="true">&hellip;</span></a>
+			</li>
+		{% else %}
+			{% if page_link.is_active %}
+				<li class="page-item active" aria-current="page">
+					<a class="page-link" href="#">{{ page_link.number }}</a>
+				</li>
+			{% else %}
+				<li class="page-item">
+					<a class="page-link" href="{{ page_link.url }}">{{ page_link.number }}</a>
+				</li>
+			{% endif %}
+		{% endif %}
+	{% endfor %}
+
+	<!-- Next button -->
+	{% if next_url %}
+		<li class="page-item">
+			<a class="page-link" href="{{ next_url }}" aria-label="Next">
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 19">
+					<path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+				</svg>
+			</a>
+		</li>
+	{% else %}
+		<li class="page-item disabled">
+			<a class="page-link" href="#" aria-label="Next">
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 19">
+					<path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+				</svg>
+			</a>
+		</li>
+	{% endif %}
+</ul>

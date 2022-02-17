@@ -1,0 +1,54 @@
+<!-- Fieldset -->
+<fieldset class="module aligned {{ fieldset.classes }} bg-white rounded">
+	{% if fieldset.name %}
+		<h2 class="rounded-top">{{ fieldset.name }}</h2>
+	{% endif %}
+
+	{% if fieldset.description %}
+		<div class="description">{{ fieldset.description|safe }}</div>
+	{% endif %}
+
+	{% for line in fieldset %}
+		<!-- Form row -->
+		<div class="form-row{% if line.fields|length_is:'1' and line.errors %} errors{% endif %}{% if not line.has_visible_field %} hidden{% endif %}{% for field in line %}{% if field.field.name %} field-{{ field.field.name }}{% endif %}{% endfor %} p-3">
+			{% for field in line %}
+				<!-- Div -->
+				<div class="d-block {% if not line.fields|length_is:'1' %} fieldBox{% if field.field.name %} field-{{ field.field.name }}{% endif %} {% if not field.is_readonly and field.errors %} errors{% endif %} {% if field.field.is_hidden %} hidden{% endif %} {% elif field.is_checkbox %} checkbox-row{% endif %}">
+					{% if not line.fields|length_is:'1' and not field.is_readonly %}
+						{{ field.errors }}
+					{% endif %}
+
+					<div class="row m-0">
+						{% if field.is_checkbox %}
+							<div class="col-12 p-0">
+								{{ field.field }}
+								{{ field.label_tag }}
+							</div>
+						{% else %}
+							<div class="col-sm-12 col-md-3 col-lg-2 p-0 pb-2 pb-md-0 pe-md-1">
+								{{ field.label_tag }}
+							</div>
+							{% if field.is_readonly %}
+								<div class="col-sm-12 col-md-9 col-lg-10 p-0">
+									<div class="readonly">{{ field.contents }}</div>
+								</div>
+							{% else %}
+								<div class="col-sm-12 col-md-9 col-lg-10 p-0">
+									{{ field.field }}
+									{% if field.field.help_text %}
+										<div class="help m-0 mt-2 p-0">{{ field.field.help_text|safe }}</div>
+									{% endif %}
+									{% if line.fields|length_is:'1' %}
+										{{ line.errors }}
+									{% endif %}
+								</div>
+							{% endif %}
+						{% endif %}
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+		<!-- End form row -->
+	{% endfor %}
+</fieldset>
+<!-- End fieldset -->
