@@ -18,22 +18,22 @@ router.register(r'offices/department', DepartmentViewSet)
 router.register(r'offices/employee', EmployeeViewSet)
 
 urlpatterns = [
-  path('catalog/', include('apps.catalog.urls')),
-  path('news/', include('apps.news.urls')),
-  path('polls/', include('apps.polls.urls')),
+    path('catalog/', include('apps.catalog.urls')),
+    path('news/', include('apps.news.urls')),
+    path('polls/', include('apps.polls.urls')),
 
-  path('accounts/', include('django.contrib.auth.urls')),
-  path('admin/docs/', include('django.contrib.admindocs.urls')),
-  path('admin/', admin.site.urls),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('admin/docs/', include('django.contrib.admindocs.urls')),
+    path('admin/', admin.site.urls),
 
-  path('resetPassword/', views.PasswordResetView.as_view(), name='password_reset'),
-  path('resetPassword/done/', views.PasswordResetDoneView.as_view(), name='password_reset_done'),
-  path('resetPassword/confirm/<uidb64>/<token>/', views.PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
-  path('resetPassword/complete/done/', views.PasswordResetCompleteView.as_view(), name='password_reset_complete'),
+    path('resetPassword/', views.PasswordResetView.as_view(), name='password_reset'),
+    path('resetPassword/done/', views.PasswordResetDoneView.as_view(), name='password_reset_done'),
+    path('resetPassword/confirm/<uidb64>/<token>/', views.PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
+    path('resetPassword/complete/done/', views.PasswordResetCompleteView.as_view(), name='password_reset_complete'),
 
-  path('signin/', admin.site.login, name='signin'),
-  path('login/', admin.site.login, name='login'),
+    path('signin/', admin.site.login, name='signin'),
+    path('login/', admin.site.login, name='login'),
 
-  path('api/', include(router.urls)),
-  path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    path('api/', include(router.urls)),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
