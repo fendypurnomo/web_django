@@ -20,8 +20,7 @@ tr.add-row td {
 	background: white !important;
 	border-bottom: 0 !important
 }
-.submit-row input:last-child,
-.submit-row a:last-child {
+.submit-row input:last-child, .submit-row a:last-child {
 	margin-bottom: 0px !important;
 }
 .table-tabular-scroll {
